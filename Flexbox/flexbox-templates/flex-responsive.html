@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+
+    body {
+      height: 100%;
+      padding: 0.2rem;
+    }
+
+    .container {
+      height: 100%;
+    }
+
+    .nav-area {
+      /* Nav flex parent properties */
+      display: flex;
+      justify-content: space-between;
+      height: 8vh;
+      background-color: #efefef;
+      border: 1px solid #000;
+    }
+
+    .nav-area div {
+      height: 100%;
+      width: 25%;
+      background-color: #333;
+    }
+
+    .nav-area .area-a {
+      width: 10em;
+    }
+
+    .nav-area .area-b {
+      width: 10em;
+    }
+
+    .carousel-area {
+      /* Flex and center all items within this div */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 41.5vh;
+      background-color: #efefef;
+      border: 1px solid #000;
+    }
+
+    .carousel {
+      width: 92%;
+      height: 80%;
+      background: #333;
+    }
+
+    .services-area {
+      /* Setup flex and equal space between all divs within */
+      display: flex;
+      justify-content: space-between;
+      height: 44vh;
+      background-color: #efefef;
+      border: 1px solid #000;
+      padding: 30px;
+    }
+
+    .services-area div {
+      height: 80%;
+      /* flex-grow for equal width/ratio between divs on the row */
+      flex-grow: 1;
+      margin: 1rem;
+      background-color: #333;
+      color: #fff;
+      margin: 30px;
+      font-size: 50px;
+      /* Centering text within the div */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Media Query To Column */
+    @media only screen and (max-device-width: 600px) {
+      /* Using column for vertical stack within flex divs */
+      .nav-area {
+        /* Switching the stack to column and centering content for mobile display*/
+        flex-direction: column;
+        /* Centering mobile panels */
+        align-items: center;
+        justify-content: center;
+        height: 20vh;
+        padding: 5px;
+      }
+
+      .nav-area div {
+        height: 100%;
+        width: 80%;
+        background-color: #333;
+        margin: 5px;
+      }
+
+      .nav-area .area-a {
+        width: 80%;
+      }
+
+      .nav-area .area-b {
+        width: 80%;
+      }
+
+      .services-area {
+        flex-direction: column;
+        height: 80%;
+        background-color: #efefef;
+        border: 1px solid #000;
+        padding: 0.5rem;
+      }
+
+      .services-area div {
+        margin: 0.5rem;
+        background-color: #333;
+        margin: 30px;
+        width: 80%;
+        height: 20vh;
+      }
+
+      /* Re-ordering with nth child using flex's 'order:1,2,3 etc' \*/
+      .service-a {
+        order: 3;
+      }
+      .service-b {
+        order: 2;
+      }
+      .service-c {
+        order: 1;
+      }
+
+    }
+    /* Media Query To Order */
+
+  </style>
+  <title>Flexbox Document</title>
+</head>
+<body>
+
+  <!-- container Starts -->
+  <div class="container">
+
+    <!-- Nav area begins -->
+    <div class="nav-area">
+      <div class="area-a"></div>
+      <div class="logo"></div>
+      <div class="area-b"></div>
+    </div>
+    <!-- Nav area ENDS -->
+
+    <!-- Carousel area begins -->
+    <div class="carousel-area">
+      <div class="carousel"></div>
+    </div>
+    <!-- Carousel area ENDS -->
+
+    <!-- Services area begins -->
+    <div class="services-area">
+      <div class="service-a">1</div>
+      <div class="service-b">2</div>
+      <div class="service-c">3</div>
+    </div>
+    <!-- Services are ENDS -->
+
+  </div>
+  <!-- container ENDS -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</body>
+</html>

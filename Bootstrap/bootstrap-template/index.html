@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <style>
+        .box {
+          height: 200px;
+          border: 1px solid black;
+          background-color: grey;
+          padding-top: 35px;
+        }
+
+        .btn {
+          margin-top: 25px;
+        }
+
+        .card {
+          margin-top: 35px;
+        }
+
+        .card-a {
+          overflow: hidden;
+          transition-duration: 2s;
+          transition-property: transform;
+        }
+
+        .spin-time {
+          transform: rotate(360deg);
+          -webkit-transform: rotate(360deg);
+        }
+
+        </style>
+    <title>Bootstrap Templating</title>
+  </head>
+  <body>
+
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-2 box color-me"></div>
+        <div class="col-2 box"></div>
+        <div class="col-2 box"></div>
+        <div class="col-2 box"></div>
+        <div class="col-2 box"></div>
+        <div class="col-2 box"></div>
+      </div>
+      <!-- row ENDS -->
+
+      <div class="row">
+        <div class="col-4 box"></div>
+        <div class="col-4 offset-4 box"></div>
+      </div>
+
+      <div class="row">
+
+      <!-- We use the align="center" attribute here which will center a div within a column -->
+       <div class="col-3" align="center">
+          <div class="card card-a" style="width: 18rem;">
+            <img src="https://via.placeholder.com/150" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">GO SOMEWHERE</a>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" id="btnA">BUTTON A</button>
+        </div>
+
+        <div class="col-3" align="center">
+          <div class="card card-b" style="width: 18rem;">
+            <img src="https://via.placeholder.com/150" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">GO SOMEWHERE</a>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" id="btnB">BUTTON B</button>
+        </div>
+
+        <div class="col-3" align="center">
+          <div class="card card-c" style="width: 18rem;">
+            <img src="https://via.placeholder.com/150" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">GO SOMEWHERE</a>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" id="btnC">BUTTON C</button>
+        </div>
+
+        <div class="col-3" align="center">
+          <div class="card card-d" style="width: 18rem;">
+            <img src="https://via.placeholder.com/150" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">GO SOMEWHERE</a>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" id="btnD">BUTTON D</button>
+        </div>
+
+      </div>
+      <!-- row ENDS -->
+
+
+    </div>
+    <!-- container div ENDS -->
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+
+    <script>
+      $('document').ready(function(){
+        // Clockwise spin
+        $('#btnA').click(function(){
+          $('.card-a').addClass('spin-time');
+        });
+
+
+        $('#btnB').click(function(){
+          $('.card-b').css('display', 'none');
+          $('#btnB').hide();
+        });
+
+
+        $('#btnC').click(function(){
+          $('.card-b').css('display', 'block');
+          $('#btnB').show();
+        });
+
+
+        $('#btnD').click(function(){
+          $('.color-me').css('background-color', 'purple');
+        });
+
+
+      });
+
+    </script>
+  </body>
+</html>

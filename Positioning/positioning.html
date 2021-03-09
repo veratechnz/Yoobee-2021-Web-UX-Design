@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS Positioning</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,700&display=swap" rel="stylesheet">
+	<style>
+		/* CSS Positioning code here */
+		html {
+			height: 3000px;
+			font-family: 'Montserrat', sans-serif;
+			color: #222;
+		}
+
+		h1 {
+			font-weight: 600;
+		}
+		.absolute {
+			width: 200px;
+			height: 300px;
+			background-color: #ffff00;
+			position: absolute;
+			top: 10px;
+			left: 700px;
+			padding: 30px;
+		}
+
+		.relative {
+			width: 500px;
+			height: 240px;
+			background-color: #00ff9d;
+			position: relative;
+			top: 80px;
+			left: 480px;
+			padding: 30px;
+		}
+
+		.normal {
+			/*no positioning value = 'static'*/
+			width: 500px;
+			height: 270px;
+			background-color: #5af7fc;
+			top: 10px;
+			right: 200px;
+			padding: 30px;
+		}
+
+		.fixed {
+			width: 400px;
+			height: 400px;
+			padding: 20px;
+			background-color: #c254d3;
+			position: fixed;
+			top: 200px;
+			right: 200px;
+			color: white;
+		}
+
+		.internal-absolute {
+			background-color: pink;
+			position: absolute;
+			bottom: 5px;
+			left: 20px;
+			width: 100px;
+			height: 100px;
+			color: black;
+			padding: 10px;
+		}
+
+		.normal-b,
+		.relative-b,
+		.absolute-b,
+		.fixed-b,
+		.relative-c {
+			width: 300px;
+			height: 300px;
+			border: 1px solid black;
+			padding: 25px;
+			-webkit-box-shadow: 3px 3px 9px 3px rgba(0,0,0,1);
+			-moz-box-shadow: 3px 3px 9px 3px rgba(0,0,0,1);
+			box-shadow: 3px 3px 9px 3px rgba(0,0,0,1);
+		}
+
+		.absolute-b {
+			position: absolute;
+			top: 900px;
+			width: 400px;
+			background-color: yellow;
+		}
+
+		.relative-b {
+			position: relative;
+			top: 0px;
+			background-color: #00ff9d;
+		}
+
+		.fixed-b {
+			background-color: #c254d3;
+			color: white;
+			width: 400px;
+			position: fixed;
+			bottom: 0px;
+		}
+
+		.relative-c {
+			background-color: #c90000;
+			position: relative;
+			color: #fff;
+			z-index: 1;
+		}
+
+		.rv {
+			font-weight: 400;
+			color: #555;
+			padding-left: 15px;
+			display: none;
+			cursor: pointer;
+			font-size: 14px;
+			margin-top: 0px;
+			}
+
+		.fixed-reveal {
+			color: white;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>CSS Positioning</h1>
+	<!-- Abosolute positioned div STARTS -->
+	<div class="absolute">
+		<h3>ABSOLUTE POSITIONING</h3>
+		<p>I am positioned to the viewport or window.</p>
+		<p class="absolute-reveal rv">
+			.absolute {<br>
+				<b>position: absolute;</b><br>
+				width: 200px;<br>
+				height: 300px;<br>
+				background-color: #ffff00;<br>
+				<b>top: 10px;</b><br>
+				<b>left: 700px;</b><br>
+				padding: 30px;<br>
+			}
+		</p>
+	</div>
+	<!-- Abosolute positioned div ENDS -->
+
+	<!-- Normal/Static positioned div STARTS -->
+	<div class="normal">
+		<h3>STATIC = DEFAULT POSITIONING</h3>
+		<p>I am the normal div or element position value (in the document).</p>
+		<p class="normal-reveal rv">
+			.normal {
+				<b>/*no positioning value = 'static'*/</b> <br>
+				width: 500px;<br>
+				height: 200px;<br>
+				background-color: #5af7fc;<br>
+				<b>top: 10px;</b><br>
+				<b>right: 200px;</b><br>
+				padding: 30px;<br>
+			}
+		</p>
+	</div>
+	<!-- Abosolute positioned div STARTS -->
+
+	<!-- Relative positioned div STARTS -->
+	<div class="relative">
+		<h3>RELATIVE POSITIONING</h3>
+		<p>I am positioned relative to where I usually am placed.</p>
+		<p class="relative-reveal rv" style="margin-left: 150px;">
+			.relative {<br>
+				<b>position: relative;</b><br>
+				width: 500px;<br>
+				height: 200px;<br>
+				background-color: #00ff9d;<br>
+				<b>top: 80px;</b><br>
+				<b>left: 480px;</b><br>
+				padding: 30px;<br>
+			}
+		</p>
+		<div class="internal-absolute rv">
+			<h6>INTERNAL ABSOLUTE</h6>
+		</div>
+	</div>
+	<!-- Relative positioned div ENDS -->
+
+	<!-- Fixed positioned div STARTS -->
+	<div class="fixed">
+		<h3>FIXED POSITIONING</h3>
+		<p>I am fixed, even if you scroll. I am positioned relative to the window.</p>
+		<p class="fixed-reveal rv">
+			.fixed {<br>
+				<b>position: fixed;</b><br>
+				width: 400px;<br>
+				height: 400px;<br>
+				padding: 20px;<br>
+				background-color: #c254d3;<br>
+				<b>top: 200px;</b><br>
+				<b>right: 200px;</b><br>
+				color: white;<br>
+			}
+		</p>
+	</div>
+	<!-- Fixed positioned div ENDS -->
+
+	<h1>Stacked Elements</h1>
+
+	<div class="normal-b">
+		<h3>Normal - position: static</h3>
+		<p>I will be on the bottom if other positioned elements overlap me.</p>
+	</div>
+	<div class="absolute-b">
+		<h3>Absolute - position: absolute</h3>
+		<p>I come in second, I will be on top of non positioned elements!</p>
+	</div>
+	<div class="relative-b">
+		<h3>Relative - position: relative</h3>
+		<p>I am almost the top element, I will overlap static and absolute elements.</p>
+	</div>
+	<div class="fixed-b">
+		<h3>Fixed - position: fixed</h3>
+		<p>I am the top element because I am fixed. All other elements will be below me.....unless (scroll down)</p>
+	</div>
+	<div class="relative-c">
+		<h3>Absolute, Relative or Fixed element + z-index: 1 (or more)</h3>
+		<p>I am a relative element with {z-index: 1;}. I will be above all elements on the page
+			including fixed (unless they have a greater assigned z-index number, z-index:2 or more;).</p>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('.absolute').hover(function() {
+				console.log('a')
+			  $('.absolute-reveal').fadeIn( 500 );
+			});
+
+			$('.normal').hover(function() {
+				console.log('a')
+			  $('.normal-reveal').fadeIn( 500 );
+			});
+
+			$('.fixed').hover(function() {
+				console.log('a')
+			  $('.fixed-reveal').fadeIn( 500 );
+			});
+
+			$('.relative').hover(function() {
+				console.log('a')
+			  $('.relative-reveal').fadeIn( 500 );
+			});
+		});
+	</script>
+</body>
+</html>
